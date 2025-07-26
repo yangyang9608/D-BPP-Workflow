@@ -4,6 +4,8 @@ Yang Y, Pang XX, Ding YM, Zhang BW, Bai WN, Zhang DY. 2025. Synergizing Bayesian
 
 To resolve complex evolutionary relationships shaped by introgression, we developed D-BPP—a modular, four-step framework that integrates heuristic and Bayesian methods. 
 
+<img width="697" height="382" alt="image" src="https://github.com/user-attachments/assets/51e8c5e0-394d-44a7-8097-e214ec6f84a0" />
+
 Step 1:
 we assess species-tree uncertainty by identifying as many plausible topologies as we can. Instead of relying on a single fixed species tree—as is often done (e.g., Ji et al. 2023; Ji et al. 2025)—we examine multiple plausible topologies, acknowledging that both ILS and gene flow can obscure phylogenetic signals. In practice, conflicting phylogenies may arise from different genetic markers (e.g., mitochondrial vs. nuclear DNA) and/or analytical methods (e.g., coalescent versus concatenation). With whole-genome data, it is now common to reconstruct sliding-window phylogenies along the genome (e.g., Santos et al. 2025), often yielding multiple plausible topologies that require further evaluation.
 
@@ -18,6 +20,6 @@ Step 4:
 We compare the marginal likelihoods of introgression models constructed under each candidate species tree topology to identify the best-supported network. These marginal likelihoods are calculated in BPP via thermodynamic integration with Gaussian quadrature (Lartillot and Philippe 2006; Rannala and Yang 2017). The model with the highest marginal likelihood—representing the best-supported divergence and introgression scenario—is selected as the most probable under the MSci framework. Finally, we run the MCMC algorithm in BPP (Flouri et al. 2020) to obtain posterior parameter estimates for the best introgression model.
 
 
-<img width="697" height="382" alt="image" src="https://github.com/user-attachments/assets/51e8c5e0-394d-44a7-8097-e214ec6f84a0" />
+
 
 
