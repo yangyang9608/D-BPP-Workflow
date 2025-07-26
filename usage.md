@@ -5,6 +5,11 @@ This document provides a detailed, step-by-step guide for running the D-BPP pipe
 
 ---
 ## 1. Software Requirements
+Dsuite：https://github.com/millanek/Dsuite/tree/master
+```
+git clone https://github.com/millanek/Dsuite.git
+cd Dsuite
+make
 
 
 ## 1. Data Preparation
