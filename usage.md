@@ -65,11 +65,24 @@ Format example:
 
 Use Dsuite or an equivalent tool to identify potential introgression events.
 
+If you have multi-loci fasta file, should to 串联 并转化成vcf文件
+
+```
+
+snp-sites -v -o output.fasta input.vcf
+```
+
 ```
 Dsuite Dtrios input.vcf imap --tree=TREE_FILE.nwk -o outputfilename
 ```
 Output: outputfilename_tree.txt with D-statistic, Z-scores, p-values, and site pattern number of ABBA, BABA, BBAA.
+
 Note: Only retain significant D-statistic signals (e.g., p < 0.01) for downstream validation.
+
+## 3. 计算Dp值 
+
+
+
 
 
 
