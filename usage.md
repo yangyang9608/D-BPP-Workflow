@@ -14,7 +14,13 @@ git clone https://github.com/millanek/Dsuite.git
 cd Dsuite
 make
 ```
-
+### b. BPP：https://github.com/bpp/bpp
+Publication:
+Flouri T., Jiao X., Rannala B., Yang Z. (2018) Species Tree Inference with BPP using Genomic Sequences and the Multispecies Coalescent. Molecular Biology and Evolution, 35(10):2585-2593. doi:10.1093/molbev/msy147
+```
+wget https://github.com/bpp/bpp/releases/download/v4.8.4/bpp-4.8.4-linux-x86_64.tar.gz
+tar zxvf bpp-4.8.4-linux-x86_64.tar.gz
+```
 
 ## 1. Data Preparation
 
