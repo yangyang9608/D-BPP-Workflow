@@ -1,4 +1,3 @@
-当然可以！下面是**直接可复制到 GitHub 编辑模式的 Markdown 格式**，带有代码高亮与美观缩进，适合 README.md 或 WORKFLOW\.md。所有缩进和格式已调整，直接复制即可：
 
 ````markdown
 # D-BPP Pipeline: Step-by-Step Workflow
