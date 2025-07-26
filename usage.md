@@ -5,11 +5,15 @@ This document provides a detailed, step-by-step guide for running the D-BPP pipe
 
 ---
 ## 1. Software Requirements
-Dsuite：https://github.com/millanek/Dsuite/tree/master
+### a. Dsuite：https://github.com/millanek/Dsuite/tree/master
+Publication:
+Malinsky, M., Matschiner, M. and Svardal, H. (2021) Dsuite ‐ fast D‐statistics and related admixture evidence from VCF files. Molecular Ecology Resources 21, 584–595. doi: https://doi.org/10.1111/1755-0998.13265
+
 ```
 git clone https://github.com/millanek/Dsuite.git
 cd Dsuite
 make
+```
 
 
 ## 1. Data Preparation
