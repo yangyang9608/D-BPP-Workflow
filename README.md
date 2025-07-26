@@ -3,6 +3,7 @@
 Yang Y, Pang XX, Ding YM, Zhang BW, Bai WN, Zhang DY. 2025. Synergizing Bayesian and Heuristic Approaches: D-BPP Uncovers Ghost Introgression in Panthera and Thuja. bioRxiv 2025.06.27.662067. doi: https://doi.org/10.1101/2025.06.27.662067
 
 Overview
+
 This repository offers a fully reproducible pipeline for reconstructing phylogenetic networks and uncovering ghost introgression via the D-BPP framework.
 D-BPP combines the speed of heuristic methods with the rigor of Bayesian inference in a four-step modular approach, enabling robust analysis of complex reticulate evolutionary histories.
 
