@@ -9,7 +9,7 @@ This document provides a detailed, step-by-step guide for running the D-BPP pipe
 
 ### a. Sequence Data
 
-- **Input:** Multi-locus sequence alignments or VCF files, including both ingroup species and at least one designated outgroup.
+- **Input:** Multi-locus sequence alignments, including both ingroup species and at least one designated outgroup.
 - **Format:** Multi-FASTA. Ensure sample names are consistent throughout all analyses.
 
 #### Example: Multi-FASTA Format
@@ -23,6 +23,9 @@ ATGCCAG...
 ...
 >Outgroup
 ...
+
+---
+
 
 #### If Your Data is in VCF Format
 
