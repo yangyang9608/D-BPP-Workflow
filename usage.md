@@ -1,13 +1,13 @@
 
-D-BPP Pipeline: Step-by-Step Workflow
+# D-BPP Pipeline: Step-by-Step Workflow
 
 This document provides a detailed, step-by-step guide for running the D-BPP pipeline, from raw data preparation to the final inference of phylogenetic networks and ghost introgression.
 
 ---
 
-1. Data Preparation
+## 1. Data Preparation
 
-a. Sequence Data
+### a. Sequence Data
 
 - **Input:** Multi-locus sequence alignments or VCF files, including both ingroup species and at least one designated outgroup.
 - **Format:** Multi-FASTA. Ensure sample names are consistent throughout all analyses.
@@ -23,7 +23,7 @@ ATGCCAG...
 ...
 >Outgroup
 ...
-````
+
 
 #### If Your Data is in VCF Format
 
@@ -31,7 +31,6 @@ You can convert VCF files to FASTA format using [snp-sites](http://sanger-pathog
 
 ```bash
 snp-sites -v -o output.fasta input.vcf
-```
 
 *Replace `input.vcf` with your VCF filename, and `output.fasta` with your desired FASTA output filename.*
 
