@@ -4,6 +4,8 @@
 This document provides a detailed, step-by-step guide for running the D-BPP pipeline, from raw data preparation to the final inference of phylogenetic networks and ghost introgression.
 
 ---
+## 1. Software Requirements
+
 
 ## 1. Data Preparation
 
