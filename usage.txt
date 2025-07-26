@@ -1,0 +1,31 @@
+D-BPP Pipeline: Step-by-Step Workflow
+
+This document provides a detailed, step-by-step guide for running the D-BPP pipeline, from raw data preparation to the final inference of phylogenetic networks and ghost introgression.
+
+1. Data Preparation
+
+a. Sequence Data
+Input: Multi-locus sequence alignments or VCF files including both ingroup species and at least one designated outgroup.
+
+Format: Multi-FASTA; ensure sample names are consistent throughout all analyses.
+
+Sequence file format: Multi-FASTA, e.g.
+>Sp1
+ATGCTAG...
+>Sp2
+ATGCCAG...
+>Sp3
+...
+>Outgroup
+...
+
+If you have VCF files, you can convert them to FASTA format using snp-sites:
+
+snp-sites -v -o vcf.file fasta.file
+
+(software snp-sites: http://sanger-pathogens.github.io/snp-sites/)
+
+
+
+b. Species Tree Topologies
+Input: Candidate species tree topologies in Newick format (e.g., generated from previous studies or sliding-window analyses).
