@@ -4,7 +4,7 @@
 This document provides a detailed, step-by-step guide for running the D-BPP pipeline, from raw data preparation to the final inference of phylogenetic networks and ghost introgression.
 
 ---
-## 1. Software Requirements
+## 0. Software Requirements
 ### a. Dsuite: https://github.com/millanek/Dsuite/tree/master
 Citation: Malinsky, M., Matschiner, M. and Svardal, H. (2021) Dsuite ‐ fast D‐statistics and related admixture evidence from VCF files. Molecular Ecology Resources 21, 584–595. doi: https://doi.org/10.1111/1755-0998.13265
 
@@ -60,3 +60,16 @@ Format example:
 (((Sp1,Sp2),Sp3),Outgroup);
 (((Sp1,Sp3),Sp1),Outgroup);
 ```
+
+## 2. D-statistic (ABBA-BABA test)
+
+Use Dsuite or an equivalent tool to identify potential introgression events.
+
+```
+Dsuite Dtrios input.vcf imap --tree=TREE_FILE.nwk -o outputfilename
+```
+Output: outputfilename_tree.txt with D-statistic, Z-scores, p-values, and site pattern number of ABBA, BABA, BBAA.
+Note: Only retain significant D-statistic signals (e.g., p < 0.01) for downstream validation.
+
+
+
