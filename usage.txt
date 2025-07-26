@@ -1,15 +1,22 @@
-D-BPP Pipeline: Step-by-Step Workflow
+当然可以！下面是**直接可复制到 GitHub 编辑模式的 Markdown 格式**，带有代码高亮与美观缩进，适合 README.md 或 WORKFLOW\.md。所有缩进和格式已调整，直接复制即可：
+
+````markdown
+# D-BPP Pipeline: Step-by-Step Workflow
 
 This document provides a detailed, step-by-step guide for running the D-BPP pipeline, from raw data preparation to the final inference of phylogenetic networks and ghost introgression.
 
-1. Data Preparation
+---
 
-a. Sequence Data
-Input: Multi-locus sequence alignments or VCF files including both ingroup species and at least one designated outgroup.
+## 1. Data Preparation
 
-Format: Multi-FASTA; ensure sample names are consistent throughout all analyses.
+### a. Sequence Data
 
-Sequence file format: Multi-FASTA, e.g.
+- **Input:** Multi-locus sequence alignments or VCF files, including both ingroup species and at least one designated outgroup.
+- **Format:** Multi-FASTA. Ensure sample names are consistent throughout all analyses.
+
+#### Example: Multi-FASTA Format
+
+```fasta
 >Sp1
 ATGCTAG...
 >Sp2
@@ -18,14 +25,21 @@ ATGCCAG...
 ...
 >Outgroup
 ...
+````
 
-If you have VCF files, you can convert them to FASTA format using snp-sites:
+#### If Your Data is in VCF Format
 
-snp-sites -v -o vcf.file fasta.file
+You can convert VCF files to FASTA format using [snp-sites](http://sanger-pathogens.github.io/snp-sites/):
 
-(software snp-sites: http://sanger-pathogens.github.io/snp-sites/)
+```bash
+snp-sites -v -o output.fasta input.vcf
+```
 
+*Replace `input.vcf` with your VCF filename, and `output.fasta` with your desired FASTA output filename.*
 
+[More information on snp-sites](http://sanger-pathogens.github.io/snp-sites/)
 
-b. Species Tree Topologies
-Input: Candidate species tree topologies in Newick format (e.g., generated from previous studies or sliding-window analyses).
+---
+
+```
+
