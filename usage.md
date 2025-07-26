@@ -40,14 +40,23 @@ conda install snp-sites
 
 #### Example: Multi-FASTA Format
 
-```fasta
+```
 >Sp1
 ATGCTAG...
 >Sp2
 ATGCCAG...
 >Sp3
-...
+AATCCTG...
+>Sp4
+AAGATTC...
+……
 >Outgroup
 ...
 ```
-
+### b. Species Tree Topologies
+Input: Candidate species tree topologies in Newick format (e.g., generated from previous studies or other analyses).
+Format example:
+```
+(((Sp1,Sp2),Sp3),Outgroup);
+(((Sp1,Sp3),Sp1),Outgroup);
+```
