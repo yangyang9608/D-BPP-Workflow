@@ -1,4 +1,4 @@
-# D-BPP
+# D-BPP workflow
 
 Yang Y, Pang XX, Ding YM, Zhang BW, Bai WN, Zhang DY. 2025. Synergizing Bayesian and Heuristic Approaches: D-BPP Uncovers Ghost Introgression in Panthera and Thuja. bioRxiv 2025.06.27.662067. doi: https://doi.org/10.1101/2025.06.27.662067
 
@@ -16,4 +16,8 @@ Model construction proceeds iteratively. Starting with the highest-Dₚ triple, 
 
 Step 4:
 We compare the marginal likelihoods of introgression models constructed under each candidate species tree topology to identify the best-supported network. These marginal likelihoods are calculated in BPP via thermodynamic integration with Gaussian quadrature (Lartillot and Philippe 2006; Rannala and Yang 2017). The model with the highest marginal likelihood—representing the best-supported divergence and introgression scenario—is selected as the most probable under the MSci framework. Finally, we run the MCMC algorithm in BPP (Flouri et al. 2020) to obtain posterior parameter estimates for the best introgression model.
+
+
+<img width="697" height="382" alt="image" src="https://github.com/user-attachments/assets/51e8c5e0-394d-44a7-8097-e214ec6f84a0" />
+
 
