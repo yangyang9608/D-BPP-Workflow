@@ -24,17 +24,3 @@ ATGCCAG...
 >Outgroup
 ...
 
----
-
-
-#### If Your Data is in VCF Format
-
-You can convert VCF files to FASTA format using [snp-sites](http://sanger-pathogens.github.io/snp-sites/):
-
-```bash
-snp-sites -v -o output.fasta input.vcf
-
-Replace input.vcf with your VCF filename, and output.fasta with your desired FASTA output filename.
-
-For more information, see the snp-sites documentation.
-
