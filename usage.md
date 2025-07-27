@@ -93,9 +93,9 @@ Then, rank the significant events by their 𝐷𝑝 values to determine the orde
 ## 4. Prepare the input files required for BPP analysis
 
 ### a. Required Input Files
-- **loci.bpp**                ## multi-locus file
-- **imap.txt**                ## individual-to-species mapping
-- **bpp.ctl**                 ## parameter configuration file
+- **loci.bpp**         	          ## multi-locus file
+- **imap.txt**                    ## individual-to-species mapping
+- **bpp.ctl**                     ## parameter configuration file
 
 ### b. Prepare for loci.bpp File
 
@@ -135,17 +135,17 @@ loci2^C2  TCGTAGTCAAGGTAT...CTGA
 ```
 **Explanation:**
 
-- **Each block represents one locus (gene/region).**
+- Each block represents one locus (gene/region).
 
-- **The first line of each block gives the number of samples and the sequence length for that locus (e.g., 6 100 means 6 samples, each with a 100 bp sequence).**
+- The first line of each block gives the number of samples and the sequence length for that locus (e.g., 6 100 means 6 samples, each with a 100 bp sequence).
 
-- **Each subsequent line provides a unique sample identifier, typically in the format locusID^sampleID (e.g., loci1^A1), followed by the aligned DNA sequence for that locus.**
+- Each subsequent line provides a unique sample identifier, typically in the format locusID^sampleID (e.g., loci1^A1), followed by the aligned DNA sequence for that locus.
 
-- **The order and names of samples must be identical across all loci.**
+- The order and names of samples must be identical across all loci.
 
-- **Each locus block is separated by a blank line.**
+- Each locus block is separated by a blank line.
 
-- **All sequences within a locus must have equal length and be properly aligned.**
+- All sequences within a locus must have equal length and be properly aligned.
 
 
 ### c. Prepare for imap.txt File
@@ -171,19 +171,19 @@ The example of bpp.ctl
   outfile = bpp.out
   mcmcfile = bpp.mcmc
   speciesdelimitation = 0 * fixed species tree
-*  speciesdelimitation = 1 0 2    * species delimitation rjMCMC algorithm0 and finetune(e)
-*  speciesdelimitation = 1 1 2 1 * species delimitation rjMCMC algorithm1 finetune (a m)
-*        speciestree = 1  0.4 0.2 0.1   * speciestree pSlider ExpandRatio ShrinkRatio
-         speciestree = 0        * species tree fixed
+* speciesdelimitation = 1 0 2    * species delimitation rjMCMC algorithm0 and finetune(e)
+* speciesdelimitation = 1 1 2 1 * species delimitation rjMCMC algorithm1 finetune (a m)
+* speciestree = 1  0.4 0.2 0.1   * speciestree pSlider ExpandRatio ShrinkRatio
+  speciestree = 0        * species tree fixed
 
-*   speciesmodelprior = 1  * 0: uniform LH; 1:uniform rooted trees; 2: uniformSLH; 3: uniformSRooted
+* speciesmodelprior = 1  * 0: uniform LH; 1:uniform rooted trees; 2: uniformSLH; 3: uniformSRooted
 
   species&tree = 6  A B C D E F
 		    2 2 2 2 2 3
-	(F, ((D)J[&phi=0.200000,tau-parent=yes],((K[&phi=0.800000,tau-parent=yes],(E,M[&phi=0.100000])N)X,(A,((B,N[&phi=0.200000])M,C)S)T)R)K)O;
-	usedata = 1  * 0: no data (prior); 1:seq like
+  (F, ((D)J[&phi=0.200000,tau-parent=yes],((K[&phi=0.800000,tau-parent=yes],(E,M[&phi=0.100000])N)X,(A,((B,N[&phi=0.200000])M,C)S)T)R)K)O;
+  usedata = 1  * 0: no data (prior); 1:seq like
   nloci = 1000  * number of data sets in seqfile
-	phase =   1 1 1 1 1 1
+  phase =   1 1 1 1 1 1
   cleandata = 0    * remove sites with ambiguity data (1:yes, 0:no)?
 
   thetaprior = 3 0.002 e  # invgamma(a, b) for theta
@@ -192,8 +192,8 @@ The example of bpp.ctl
 
 * heredity = 1 4 4
 * locusrate = 1 15
-	locusrate = 1 0 0 5 iid
-	finetune =  0: 0.05 0.001 0.001 0.001 0.05 0.001 0.001 # finetune for GBtj, GBspr, theta, tau, mix
+  locusrate = 1 0 0 5 iid
+  finetune =  0: 0.05 0.001 0.001 0.001 0.05 0.001 0.001 # finetune for GBtj, GBspr, theta, tau, mix
   Threads = 20 1 1
   print = 1 0 0 0   * MCMC samples, locusrate, heredityscalars, Genetrees
   burnin = 150000
