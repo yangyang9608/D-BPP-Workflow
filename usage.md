@@ -204,6 +204,15 @@ The example of bpp.ctl
   nsample = 1500000
 ```
 
+Be sure to edit the input file parameters and the species and tree configurations according to your specific dataset. Additionally, update the designated introgression models as needed before running the analysis.
+
+For more detailed settings, please refer to the official BPP manual.
+
+
+### d. run BPP
+```
+bpp -cfile bpp.ctl
+```
 
 
 
