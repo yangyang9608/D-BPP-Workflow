@@ -162,6 +162,46 @@ C2  C
 ```
 ### d. Prepare for bpp.ctl File
 
+The example of bpp.ctl
+
+```
+  seed =  -1
+  seqfile = loci.bpp
+  Imapfile = imap.txt
+  outfile = bpp.out
+  mcmcfile = bpp.mcmc
+  speciesdelimitation = 0 * fixed species tree
+*  speciesdelimitation = 1 0 2    * species delimitation rjMCMC algorithm0 and finetune(e)
+*  speciesdelimitation = 1 1 2 1 * species delimitation rjMCMC algorithm1 finetune (a m)
+*        speciestree = 1  0.4 0.2 0.1   * speciestree pSlider ExpandRatio ShrinkRatio
+         speciestree = 0        * species tree fixed
+
+*   speciesmodelprior = 1  * 0: uniform LH; 1:uniform rooted trees; 2: uniformSLH; 3: uniformSRooted
+
+  species&tree = 6  A B C D E F
+		    2 2 2 2 2 3
+	(F, ((D)J[&phi=0.200000,tau-parent=yes],((K[&phi=0.800000,tau-parent=yes],(E,M[&phi=0.100000])N)X,(A,((B,N[&phi=0.200000])M,C)S)T)R)K)O;
+	usedata = 1  * 0: no data (prior); 1:seq like
+  nloci = 1000  * number of data sets in seqfile
+	phase =   1 1 1 1 1 1
+  cleandata = 0    * remove sites with ambiguity data (1:yes, 0:no)?
+
+  thetaprior = 3 0.002 e  # invgamma(a, b) for theta
+  tauprior = 3 0.01    # invgamma(a, b) for root tau & Dirichlet(a) for other tau's
+  phiprior = 1 1  # Beta(a, b) for root tau & Dirichlet(a) for other tau's
+
+* heredity = 1 4 4
+* locusrate = 1 15
+	locusrate = 1 0 0 5 iid
+	finetune =  0: 0.05 0.001 0.001 0.001 0.05 0.001 0.001 # finetune for GBtj, GBspr, theta, tau, mix
+  Threads = 20 1 1
+  print = 1 0 0 0   * MCMC samples, locusrate, heredityscalars, Genetrees
+  burnin = 150000
+  sampfreq = 2
+  nsample = 1500000
+```
+
+
 
 
 
