@@ -209,7 +209,7 @@ Be sure to edit the input file parameters and the species and tree configuration
 For more detailed settings, please refer to the official BPP manual.
 
 
-### d. run BPP
+### e. run BPP
 ```
 bpp -cfile bpp.ctl
 ```
