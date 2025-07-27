@@ -4,7 +4,7 @@
 This document provides a detailed, step-by-step guide for running the D-BPP pipeline, from raw data preparation to the final inference of phylogenetic networks and ghost introgression.
 
 ---
-## 0. Software Requirements
+## 1. Software Requirements
 ### a. Dsuite: https://github.com/millanek/Dsuite/tree/master
 Citation: Malinsky, M., Matschiner, M. and Svardal, H. (2021) Dsuite ‐ fast D‐statistics and related admixture evidence from VCF files. Molecular Ecology Resources 21, 584–595. doi: https://doi.org/10.1111/1755-0998.13265
 
@@ -80,6 +80,12 @@ Output: outputfilename_tree.txt with D-statistic, Z-scores, p-values, and site p
 Note: Only retain significant D-statistic signals (e.g., p < 0.01) for downstream validation.
 
 ## 3. 计算Dp值 
+
+
+```
+D_p=\frac{ABBA-BABA}{BBAA+ABBA+BABA}<img width="432" height="27" alt="image" src="https://github.com/user-attachments/assets/917ca71a-2c53-4adc-bbef-d763487b7591" />
+
+```
 
 
 
