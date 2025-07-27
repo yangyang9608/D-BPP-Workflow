@@ -93,15 +93,13 @@ Then, rank the significant events by their 𝐷𝑝 values to determine the orde
 ## 4. Prepare the input files required for BPP analysis
 
 ### a. Required Input Files
-i)   loci.bpp   ## multi-locus file
-ii)  bpp.ctl    ## parameter configuration file
-iii) imap.txt   ## individual-to-species mapping
+- **loci.bpp**                ## multi-locus file
+- **imap.txt**                ## individual-to-species mapping
+- **bpp.ctl**                 ## parameter configuration file
 
 ### b. Prepare for loci.bpp File
 
-If all loci files are stored in the input folder and each file has a .fa extension, you can use the following command.
-
-In addition, a loci list file (e.g., loci.list) should be prepared, listing the names of all loci files (one per line). 
+First, a loci list file (e.g., loci.list) should be prepared, listing the names of all loci files (one per line). 
 Example: loci.list
 ```
 locus1
@@ -111,11 +109,58 @@ locus3
 
 ```
 
+Store all loci files in the input folder with a .fa extension, then run the following command:
 
 ```
 perl fasta2bpp.pl input loci.list > loci.bpp
 ```
+The example of loci.bpp
+```
+6 100
+loci1^A1  ATGCCGTAGCTAGTCA...GATC
+loci1^A2  ATGCCGTAGCTAGTCA...GATC
+loci1^B1  ATGTCGTAGCTAGTCA...GATC
+loci1^B2  ATGTCGTAGCTAGTCA...GATC
+loci1^C1  ATGCCGTAGATAGTCA...GATC
+loci1^C2  ATGCCGTAGATAGTCA...GATC
 
+6 95
+loci2^A1  TCGTAGTCAAGGTAC...CTGA
+loci2^A2  TCGTAGTCAAGGTAC...CTGA
+loci2^B1  TCGTAGTCAAGGTGC...CTGA
+loci2^B2  TCGTAGTCAAGGTGC...CTGA
+loci2^C1  TCGTAGTCAAGGTAT...CTGA
+loci2^C2  TCGTAGTCAAGGTAT...CTGA
+
+```
+**Explanation:**
+
+- **Each block represents one locus (gene/region).**
+
+- **The first line of each block gives the number of samples and the sequence length for that locus (e.g., 6 100 means 6 samples, each with a 100 bp sequence).**
+
+- **Each subsequent line provides a unique sample identifier, typically in the format locusID^sampleID (e.g., loci1^A1), followed by the aligned DNA sequence for that locus.**
+
+- **The order and names of samples must be identical across all loci.**
+
+- **Each locus block is separated by a blank line.**
+
+- **All sequences within a locus must have equal length and be properly aligned.**
+
+
+### c. Prepare for imap.txt File
+
+The imap file defines the correspondence between individual samples and species, with each line containing an individual and its assigned species separated by a tab character.
+
+```
+A1  A
+A2  A
+B1  B
+B2  B
+C1  C
+C2  C
+```
+### d. Prepare for bpp.ctl File
 
 
 
