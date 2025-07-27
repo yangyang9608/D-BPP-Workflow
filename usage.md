@@ -68,10 +68,34 @@ Format example:
 
 Use Dsuite or an equivalent tool to identify potential introgression events.
 
-If you have multiple locus-specific FASTA files, you should concatenate them into a single multi-locus alignment and then convert the combined file to VCF format.
+If you have multiple locus-specific FASTA files, you should concatenate them into a single multi-locus alignment.
 
 ```
+perl concatenate_multi-locus.pl file_list indir output.fasta
+```
+**Parameters:**
 
+-file_list: A text file containing the names of all .fa files to be concatenated, one filename per line.
+
+-indir: Directory containing the input .fa files.
+
+-output.fasta: Name of the merged output FASTA file.
+
+Description:
+concatenate_multi-locus.pl:This script reads a list of .fa files specified in file_list from the directory indir, extracts and concatenates sequences for each unique sequence ID across all files, and writes the merged results to output.fasta. The sequence IDs are normalized by removing special characters and extending/truncating to 14 characters for consistency.
+
+Example:
+Suppose you have a folder ./fa_dir with files sample1.fa, sample2.fa, sample3.fa, and a file_list.txt containing:
+```
+sample1.fa
+sample2.fa
+sample3.fa
+...
+```
+
+Then convert the combined file to VCF format.
+
+```
 snp-sites -v -o output.fasta input.vcf
 ```
 
