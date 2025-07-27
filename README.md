@@ -75,11 +75,11 @@ perl concatenate_multi-locus.pl file_list indir output.fasta
 ```
 **Parameters:**
 
--file_list: A text file containing the names of all .fa files to be concatenated, one filename per line.
+- file_list: A text file containing the names of all .fa files to be concatenated, one filename per line.
 
--indir: Directory containing the input .fa files.
+- indir: Directory containing the input .fa files.
 
--output.fasta: Name of the merged output FASTA file.
+- output.fasta: Name of the merged output FASTA file.
 
 Description:
 concatenate_multi-locus.pl:This script reads a list of .fa files specified in file_list from the directory indir, extracts and concatenates sequences for each unique sequence ID across all files, and writes the merged results to output.fasta. The sequence IDs are normalized by removing special characters and extending/truncating to 14 characters for consistency.
