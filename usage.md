@@ -65,12 +65,14 @@ Format example:
 
 Use Dsuite or an equivalent tool to identify potential introgression events.
 
-If you have multi-loci fasta file, should to 串联 并转化成vcf文件
+If you have multiple locus-specific FASTA files, you should concatenate them into a single multi-locus alignment and then convert the combined file to VCF format.
 
 ```
 
 snp-sites -v -o output.fasta input.vcf
 ```
+
+Once the multi-locus FASTA files have been concatenated and converted to VCF format, you can use Dsuite to compute D-statistics for introgression analysis.
 
 ```
 Dsuite Dtrios input.vcf imap --tree=TREE_FILE.nwk -o outputfilename
@@ -79,13 +81,22 @@ Output: outputfilename_tree.txt with D-statistic, Z-scores, p-values, and site p
 
 Note: Only retain significant D-statistic signals (e.g., p < 0.01) for downstream validation.
 
-## 3. 计算Dp值 
-
-
-```
-D_p=\frac{ABBA-BABA}{BBAA+ABBA+BABA}<img width="432" height="27" alt="image" src="https://github.com/user-attachments/assets/917ca71a-2c53-4adc-bbef-d763487b7591" />
+## 3. Calculate the 𝐷𝑝
+For each significant D-statistic result, compute the 𝐷𝑝 (Hamlin et al. 2020) using the specified formula to further quantify the extent of introgression.
 
 ```
+D𝑝=(ABBA-BABA)/(BBAA+ABBA+BABA)
+
+```
+Then, rank the significant events by their 𝐷𝑝 values to determine the order in which they will be incorporated into the analysis.
+
+## 4. Prepare the input files required for BPP analysis
+
+### a. Required Input Files
+#### loci.bpp   ## multi-locus file
+#### bpp.ctl    ## parameter configuration file
+#### imap.txt   ## individual-to-species mapping
+
 
 
 
