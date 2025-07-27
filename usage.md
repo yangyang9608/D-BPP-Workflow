@@ -93,10 +93,28 @@ Then, rank the significant events by their 𝐷𝑝 values to determine the orde
 ## 4. Prepare the input files required for BPP analysis
 
 ### a. Required Input Files
-#### loci.bpp   ## multi-locus file
-#### bpp.ctl    ## parameter configuration file
-#### imap.txt   ## individual-to-species mapping
+i)   loci.bpp   ## multi-locus file
+ii)  bpp.ctl    ## parameter configuration file
+iii) imap.txt   ## individual-to-species mapping
 
+### b. Prepare for loci.bpp File
+
+If all loci files are stored in the input folder and each file has a .fa extension, you can use the following command.
+
+In addition, a loci list file (e.g., loci.list) should be prepared, listing the names of all loci files (one per line). 
+Example: loci.list
+```
+locus1
+locus2
+locus3
+...
+
+```
+
+
+```
+perl fasta2bpp.pl input loci.list > loci.bpp
+```
 
 
 
